@@ -9,9 +9,9 @@ public class Demo {
 	@Test
 	public void test() {
 		// Make sure that it is writeable and we know where to look for it
-		TileWorldUtil.outputDir = "/Users/nico/Downloads/output/";
+		TileWorldUtil.outputDir = "C:\\Users\\lucma\\OneDrive\\Documenten\\school\\sorting and searching\\assignment-2\\s-s-assign2\\src\\main\\resources\\output";
 		System.out.printf("ID;Length Dijkstra;Length Floyd;Costs Dijkstra; Costs Floyd\n");
-		for (int i = 1; i <= 21; i++) {
+		for (int i = 1; i <= 23; i++) {
 			// Read the graph directly from a image
 			EdgeWeightedDigraph graafDijkstra = new EdgeWeightedDigraph("i" + i);
 			// Get the start and end node
@@ -27,6 +27,8 @@ public class Demo {
 				graafDijkstra.save("i" + i + "-dijkstra");
 			}
 
+			System.out.println("Aantal knoppen: " + dijkstra.getKnoppen());
+
 			// Run Floyd-Warshall
             EdgeWeightedDigraph graafFloyd = new EdgeWeightedDigraph("i" + i);
 			FloydWarshall floyd = new FloydWarshall(graafFloyd.createAdjMatrixEdgeWeightedDigraph());
@@ -36,9 +38,10 @@ public class Demo {
 				// Save it
                 graafFloyd.save("i" + i + "-floyd");
 			}
+
 			if (dijkstra.hasPathTo(finish)) {
                 System.out.printf("i%d;%d;%d;%1.0f;%1.0f\n", i, length(dijkstra.pathTo(finish)), length(floyd.path(start, finish)), dijkstra.distTo(finish), floyd.dist(start, finish));
-            } else {
+			} else {
                 System.out.printf("i%d;-;-;-;-\n", i);
             }
 		}

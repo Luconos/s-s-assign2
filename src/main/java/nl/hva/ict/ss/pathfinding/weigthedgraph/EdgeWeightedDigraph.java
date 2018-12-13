@@ -297,4 +297,8 @@ public class EdgeWeightedDigraph {
         E++;
     }
 
+    public int getKnoppen(){
+        return hoogte * breedte;
+    }
+
 }

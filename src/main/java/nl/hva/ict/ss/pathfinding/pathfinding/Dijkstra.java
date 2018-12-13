@@ -31,6 +31,8 @@ public class Dijkstra {
     private double[] distTo;          // distTo[v] = distance  of shortest s->v path
     private DirectedEdge[] edgeTo;    // edgeTo[v] = last edge on shortest s->v path
     private IndexMinPQ<Double> pq;    // priority queue of vertices
+    public int stepCounter = 0;
+    private int knoppen;
 
     /**
      * Computes a shortest paths tree from <tt>s</tt> to every other vertex in
@@ -45,6 +47,7 @@ public class Dijkstra {
             if (e.weight() < 0)
                 throw new IllegalArgumentException("edge " + e + " has negative weight");
         }
+        this.knoppen = G.getKnoppen();
 
         distTo = new double[G.V()];
         edgeTo = new DirectedEdge[G.V()];
@@ -83,6 +86,7 @@ public class Dijkstra {
      *    <tt>Double.POSITIVE_INFINITY</tt> if no such path
      */
     public double distTo(int v) {
+        stepCounter++;
         return distTo[v];
     }
 
@@ -161,5 +165,9 @@ public class Dijkstra {
             }
         }
         return true;
+    }
+
+    public int getKnoppen(){
+        return knoppen;
     }
  }
