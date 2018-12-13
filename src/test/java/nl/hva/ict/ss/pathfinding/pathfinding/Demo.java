@@ -26,6 +26,7 @@ public class Demo {
 				// Save it
 				graafDijkstra.save("i" + i + "-dijkstra");
 			}
+			System.out.println(dijkstra.teller);
 
 			// Run Floyd-Warshall
             EdgeWeightedDigraph graafFloyd = new EdgeWeightedDigraph("i" + i);
