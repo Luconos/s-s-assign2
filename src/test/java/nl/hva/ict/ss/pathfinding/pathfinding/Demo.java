@@ -27,8 +27,6 @@ public class Demo {
 				graafDijkstra.save("i" + i + "-dijkstra");
 			}
 
-			System.out.println("Aantal knoppen: " + dijkstra.getKnoppen());
-
 			// Run Floyd-Warshall
             EdgeWeightedDigraph graafFloyd = new EdgeWeightedDigraph("i" + i);
 			FloydWarshall floyd = new FloydWarshall(graafFloyd.createAdjMatrixEdgeWeightedDigraph());

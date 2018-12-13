@@ -296,9 +296,4 @@ public class EdgeWeightedDigraph {
         adj[v].add(e);
         E++;
     }
-
-    public int getKnoppen(){
-        return hoogte * breedte;
-    }
-
 }
