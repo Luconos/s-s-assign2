@@ -31,7 +31,6 @@ public class Dijkstra {
     private double[] distTo;          // distTo[v] = distance  of shortest s->v path
     private DirectedEdge[] edgeTo;    // edgeTo[v] = last edge on shortest s->v path
     private IndexMinPQ<Double> pq;    // priority queue of vertices
-    public int stepCounter = 0;
 
     /**
      * Computes a shortest paths tree from <tt>s</tt> to every other vertex in
@@ -84,7 +83,6 @@ public class Dijkstra {
      *    <tt>Double.POSITIVE_INFINITY</tt> if no such path
      */
     public double distTo(int v) {
-        stepCounter++;
         return distTo[v];
     }
 
