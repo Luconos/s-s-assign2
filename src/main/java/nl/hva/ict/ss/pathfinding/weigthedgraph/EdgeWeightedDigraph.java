@@ -44,6 +44,8 @@ public class EdgeWeightedDigraph {
     private final TileWorldUtil t;
     private final int breedte;
     private final int hoogte;
+
+    public int teller = 0;
     /**
      * Constructor maakt een Digraph aan met V knooppunten (vertices)
      * Direct overgenomen uit Sedgwick. T.b.v. Floyd-Warshall
@@ -236,6 +238,7 @@ public class EdgeWeightedDigraph {
         for (int v = 0; v < V; v++) {
             for (DirectedEdge e : adj[v]) {
                 list.add(e);
+                teller++;
             }
         }
         return list;
