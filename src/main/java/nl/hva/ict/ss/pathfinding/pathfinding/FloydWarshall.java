@@ -60,7 +60,7 @@ import java.util.Stack;
             for (DirectedEdge e : G.adj(v)) {
                 distTo[e.from()][e.to()] = e.weight();
                 edgeTo[e.from()][e.to()] = e;
-                teller++;
+//                teller++;
             }
             // in case of self-loops
             if (distTo[v][v] >= 0.0) {
@@ -88,6 +88,8 @@ import java.util.Stack;
                 }
             }
         }
+
+        teller += G.teller;
     }
 
     /**

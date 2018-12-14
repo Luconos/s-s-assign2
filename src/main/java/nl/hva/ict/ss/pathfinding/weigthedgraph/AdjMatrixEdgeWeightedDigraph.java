@@ -33,6 +33,8 @@ public class AdjMatrixEdgeWeightedDigraph {
     private int E;
     private DirectedEdge[][] adj;
 
+    public int teller = 0;
+
     /**
      * Initializes an empty edge-weighted digraph with <tt>V</tt> vertices and 0
      * edges.
@@ -106,6 +108,7 @@ public class AdjMatrixEdgeWeightedDigraph {
         if (adj[v][w] == null) {
             E++;
             adj[v][w] = e;
+            teller++;
         }
     }
 
