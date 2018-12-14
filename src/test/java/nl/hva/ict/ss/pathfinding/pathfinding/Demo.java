@@ -11,7 +11,7 @@ public class Demo {
 		// Make sure that it is writeable and we know where to look for it
 		TileWorldUtil.outputDir = "..\\s-s-assign2\\src\\main\\resources\\output\\";
 		System.out.printf("ID;Length Dijkstra;Length Floyd;Costs Dijkstra; Costs Floyd\n");
-		for (int i = 1; i <= 23; i++) {
+		for (int i = 1; i <= 25; i++) {
 			// Read the graph directly from a image
 			EdgeWeightedDigraph graafDijkstra = new EdgeWeightedDigraph("i" + i);
 			// Get the start and end node
