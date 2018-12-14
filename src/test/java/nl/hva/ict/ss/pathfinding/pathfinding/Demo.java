@@ -26,7 +26,7 @@ public class Demo {
 				// Save it
 				graafDijkstra.save("i" + i + "-dijkstra");
 			}
-			System.out.println("Dijkstre: " + dijkstra.getTeller());
+			System.out.println("Dijkstre teller: " + dijkstra.getTeller());
 
 			// Run Floyd-Warshall
             EdgeWeightedDigraph graafFloyd = new EdgeWeightedDigraph("i" + i);
@@ -37,11 +37,12 @@ public class Demo {
 				// Save it
                 graafFloyd.save("i" + i + "-floyd");
 			}
+			System.out.println("Floyd teller: " + floyd.getTeller());
 
 			if (dijkstra.hasPathTo(finish)) {
-                System.out.printf("i%d;%d;%d;%1.0f;%1.0f\n", i, length(dijkstra.pathTo(finish)), length(floyd.path(start, finish)), dijkstra.distTo(finish), floyd.dist(start, finish));
+                System.out.printf("i%d;%d;%d;%1.0f;%1.0f\n\n", i, length(dijkstra.pathTo(finish)), length(floyd.path(start, finish)), dijkstra.distTo(finish), floyd.dist(start, finish));
 			} else {
-                System.out.printf("i%d;-;-;-;-\n", i);
+                System.out.printf("i%d;-;-;-;-\n\n", i);
             }
 		}
 	}

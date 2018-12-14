@@ -35,6 +35,8 @@ import java.util.Stack;
     private double[][] distTo;  // distTo[v][w] = length of shortest v->w path
     private DirectedEdge[][] edgeTo;  // edgeTo[v][w] = last edge on shortest v->w path
 
+    private int teller = 0;
+
     /**
      * Computes a shortest paths tree from each vertex to to every other vertex in
      * the edge-weighted digraph <tt>G</tt>. If no such shortest path exists for
@@ -58,6 +60,7 @@ import java.util.Stack;
             for (DirectedEdge e : G.adj(v)) {
                 distTo[e.from()][e.to()] = e.weight();
                 edgeTo[e.from()][e.to()] = e;
+                teller++;
             }
             // in case of self-loops
             if (distTo[v][v] >= 0.0) {
@@ -73,6 +76,7 @@ import java.util.Stack;
                 if (edgeTo[v][i] == null) continue;  // optimization
                 for (int w = 0; w < V; w++) {
                     if (distTo[v][w] > distTo[v][i] + distTo[i][w]) {
+                        teller++;
                         distTo[v][w] = distTo[v][i] + distTo[i][w];
                         edgeTo[v][w] = edgeTo[i][w];
                     }
@@ -178,6 +182,10 @@ import java.util.Stack;
             }
         }
         return true;
+    }
+
+    public int getTeller(){
+        return teller;
     }
     
 }
