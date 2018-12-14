@@ -9,7 +9,7 @@ public class Demo {
 	@Test
 	public void test() {
 		// Make sure that it is writeable and we know where to look for it
-		TileWorldUtil.outputDir = "C:\\Users\\lucma\\OneDrive\\Documenten\\school\\sorting and searching\\assignment-2\\s-s-assign2\\src\\main\\resources\\output";
+		TileWorldUtil.outputDir = "..\\s-s-assign2\\src\\main\\resources\\output\\";
 		System.out.printf("ID;Length Dijkstra;Length Floyd;Costs Dijkstra; Costs Floyd\n");
 		for (int i = 1; i <= 23; i++) {
 			// Read the graph directly from a image
